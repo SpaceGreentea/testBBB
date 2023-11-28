@@ -1,0 +1,100 @@
+@mixin sp {
+  @media(max-width: 900px) {
+      @content;
+  }
+}
+
+.product_detail_contents {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+
+  @include sp {
+    display: block;
+  }
+}
+
+.product_picture img {
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+
+  @include sp {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.product_explain_1 {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.product_explain_1 br {
+
+  @include sp {
+    display: none;
+  }
+}
+
+.product_explain_2 {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  line-height: calc(3 / 2);
+  margin-bottom: 30px;
+}
+
+.product_explain_2 br {
+
+  @include sp {
+    display: none;
+  }
+}
+
+.product_price {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.product_specific {
+  display: flex;
+}
+
+.product_specific_title {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 12px;
+  color: #333;
+  margin-right: 28px;
+}
+
+.product_specific_detail {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 12px;
+  color: #333;
+}
+
+.back_to_products {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+  margin-top: 60px;
+  margin-bottom: 126px;
+}

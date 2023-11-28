@@ -1,0 +1,270 @@
+@mixin sp {
+  @media(max-width: 900px) {
+      @content;
+  }
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  left: 160px;
+  z-index: 20;
+
+  @include sp {
+    left: 40px;
+  }
+}
+
+.header_title_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_title {
+  // width: 180px;
+  // height: 20px;
+  margin-top: 30px;
+}
+
+.header_title_img {
+  width: 180px;
+}
+
+.hamburger-menu {
+  display: block;
+  padding-right: 40px;
+  margin-top: 35px;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
+
+  @include sp {
+    padding-right: 42px;
+  }
+}
+
+.hamburger-menu span {
+  width: 30px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  left: 8px;
+  transition: 0.4s ease-in-out;
+}
+/* 1本目の線の位置 */
+.hamburger-menu span:nth-child(1) {
+  top: 0px;
+}
+/* 2本目の線の位置 */
+.hamburger-menu span:nth-child(2) {
+  top: 8px;
+}
+
+#hamburger-navigation {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0s ease, visibility 0s ease;
+  visibility: hidden;
+}
+
+/* 1本目の線を-45度回転 */
+.hamburger-menu.active span:nth-child(1) {
+  top:5px;
+  // left: 8px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+
+/* 2本目の線を-45度回転 */
+.hamburger-menu.active span:nth-child(2) {
+  top:5px;
+  // left: 8px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+#hamburger-navigation.active {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+.hamburger-menu-section {
+  display: block;
+  opacity: 0;
+}
+
+.hamburger-menu-section.active {
+  opacity: 1;
+  position: relative;
+  top: 40px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  transform: translateX(50px);
+  transition: opacity 1s, transform 0.5s;
+}
+
+.main_title_products {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  color: #333;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 34px;
+  row-gap: 76px;
+  // margin-top: 30px;
+
+  @include sp {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    // column-gap: 19px;
+    // row-gap: 96px;
+  }
+}
+
+.products_container_1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 34px;
+  row-gap: 76px;
+  // margin-top: 30px;
+
+  @include sp {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    // column-gap: 19px;
+    // row-gap: 96px;
+  }
+}
+
+.products_container_2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr 1fr 1fr;
+  column-gap: 34px;
+  // row-gap: 76px;
+  // margin-top: 30px;
+
+  @include sp {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    // column-gap: 19px;
+    // row-gap: 96px;
+  }
+}
+
+.figure-font figcaption {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.top-picture {
+  max-width: 294px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1;
+
+  @include sp {
+    max-width: 100%;
+  }
+}
+
+.viewmore-link {
+  padding-top: 76px;
+  padding-bottom: 126px;
+  text-align: center;
+}
+
+.page_number_link {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  padding-top: 40px;
+  padding-bottom: 126px;
+}
+
+// .page_number_2_margin {
+//   margin-bottom: 255px;
+// }
+
+.page_number_link ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.page_number_link li {
+  display: inline;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.pagination-container {
+  width: 0;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  // margin-bottom: 20px;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  padding-left:  40px;
+  padding-right: 40px;
+
+  @include sp {
+    display: block;
+  }
+}
+
+.footer-navi li {
+  display: inline;
+  margin-right: 30px;
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 12px;
+  color: #333;
+}
+
+footer small {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 10px;
+  color: #333;
+}
+

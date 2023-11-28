@@ -1,0 +1,13 @@
+@use 'top';
+@use 'product-detail';
+@use 'about';
+@use 'company';
+
+body {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  min-height: 100vh;
+  position: relative;
+}

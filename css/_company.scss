@@ -1,0 +1,77 @@
+@mixin sp {
+  @media(max-width: 900px) {
+      @content;
+  }
+}
+
+.main_title_company {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.company_contents {
+  display: flex;
+  margin-left: 10px;
+
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+
+  @include sp {
+    display: block;
+  }
+}
+
+.company_contents_line {
+  // width: 600px;
+  width: 100%;
+  max-width: 600px;
+  height: 0px;
+  background: transparent;
+  border: 1px solid #dcdbdb;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.company_contents_title_a {
+  margin-right: 152px;
+}
+
+.company_contents_title_b {
+  margin-right: 138px;
+}
+
+.company_contents_title_c {
+  margin-right: 124px;
+}
+
+.company_map {
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 126px;
+  position: relative;
+  max-width: 600px;
+  // width: 100%;
+  height: 0;
+  padding-top: 25%;
+}
+
+.company_map iframe {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  // max-width: 1360px;
+  width: 100%;
+  height: 300px;
+}
